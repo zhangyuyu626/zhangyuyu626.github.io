@@ -1,330 +1,210 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>压力容器监管大屏</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <title>车辆综合管控平台</title>
 
-    <style>
-        .t_title{
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            font-size: 2.5em;
-            line-height: 80px;
-            color: #fff;
-        }
-        #chart_map{
-            cursor: pointer;
-        }
-        .t_show{
-            position: absolute;
-            top: 0;
-            right: 0;
-            border-radius: 2px;
-            background: #2C58A6;
-            padding: 2px 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.0.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.myscroll').myScroll({
+                speed: 60, //数值越大，速度越慢
+                rowHeight: 38 //li的高度
+            });
+        })
+
+    </script>
 </head>
 <body>
-
-<!--header-->
-<div class="header">
-    <div class="bg_header">
-        <div class="header_nav fl t_title">
-            压力容器监管大屏
-        </div>
+<!--头部-->
+<header id="header">
+    <div class="header">
+        <h1 class=""><a href="/" style="color: white">车辆综合管控平台</a></h1>
     </div>
-</div>
+</header>
 
-<div class="top_menu">
-    <a class="top_menu_font" style=" margin-left: 40px;" href="">综合大屏</a>
-    <a class="top_menu_font" href="">电梯大屏</a>
-    <a class="top_menu_font" href="">压力容器大屏</a>
-    <a class="top_menu_font" href="">模板集中地</a>
-</div>
+<!--内容-->
+<section id="data_content">
 
-<!--main-->
-<div class="data_content">
-    <!--<div class="data_time">-->
-        <!--&lt;!&ndash;温馨提示: 点击模块后跳转至详情页面。&ndash;&gt;-->
-    <!--</div>-->
-
-    <div class="data_main">
-        <div class="main_left fl">
-            <div class="left_1 t_btn6" style="cursor: pointer;">
-                <!--左上边框-->
-                <div class="t_line_box">
-                    <i class="t_l_line"></i>
-                    <i class="l_t_line"></i>
+    <div class="data_info">
+        <div class="info_1 fl">
+            <div class="text_1">
+                <div class="fl">
+                    <img src="images/info_1.png" alt="/">
+                    <div class="fl count">
+                        <p>车辆总数(辆)</p>
+                        <p class="conuts">46625</p>
+                    </div>
                 </div>
-                <!--右上边框-->
-                <div class="t_line_box">
-                    <i class="t_r_line"></i>
-                    <i class="r_t_line"></i>
+                <div class="fl">
+                    <img src="images/info_2.png" alt="/">
+                    <div class="fl count">
+                        <p>车辆总数(辆)</p>
+                        <p class="conuts">46625</p>
+                    </div>
                 </div>
-                <!--左下边框-->
-                <div class="t_line_box">
-                    <i class="l_b_line"></i>
-                    <i class="b_l_line"></i>
+                <div class="fl">
+                    <img src="images/info_3.png" alt="/">
+                    <div class="fl count">
+                        <p>车辆总数(辆)</p>
+                        <p class="conuts">46625</p>
+                    </div>
                 </div>
-                    <!--右下边框-->
-                    <div class="t_line_box">
-                    <i class="r_b_line"></i>
-                    <i class="b_r_line"></i>
-                </div>
-                <div class="main_title" id="title1">
-                    <img src="img/t_7.png" alt="更多资源：">
-                    检验报告数据量前5名特检单位统计
-                    <!--检验报告数据量前5名-->
-                </div>
-                <div id="chart_1" class="chart" style="width:100%;height: 280px;"></div>
-            </div>
-            <div class="left_2" style="cursor: pointer;">
-                <!--左上边框-->
-                <div class="t_line_box">
-                    <i class="t_l_line"></i>
-                    <i class="l_t_line"></i>
-                </div>
-                <!--右上边框-->
-                <div class="t_line_box">
-                    <i class="t_r_line"></i>
-                    <i class="r_t_line"></i>
-                </div>
-                <!--左下边框-->
-                <div class="t_line_box">
-                    <i class="l_b_line"></i>
-                    <i class="b_l_line"></i>
-                </div>
-                    <!--右下边框-->
-                    <div class="t_line_box">
-                    <i class="r_b_line"></i>
-                    <i class="b_r_line"></i>
-                </div>
-                <div class="main_title" title="各检验单位的检验结论统计" id="title2">
-                    <img src="img/t_7.png" alt="更多资源：">
-                    各检验单位的检验结论统计
-                    <!--各检验单位统计-->
-                </div>
-                <div id="chart_2" class="chart t_btn9" style="width:100%;height: 280px;"></div>
             </div>
         </div>
-        <div class="main_center fl">
-            <div class="center_text">
-                <!--左上边框-->
-                <div class="t_line_box">
-                    <i class="t_l_line"></i>
-                    <i class="l_t_line"></i>
+        <div class="info_2 fl">
+            <div class="text_2">
+                <div class="fl">
+                    <img src="images/info_4.png" alt="/">
+                    <div class="fl count">
+                        <p>车辆总数(辆)</p>
+                        <p class="conuts">46625</p>
+                    </div>
                 </div>
-                <!--右上边框-->
-                <div class="t_line_box">
-                    <i class="t_r_line"></i>
-                    <i class="r_t_line"></i>
+                <div class="fl">
+                    <img src="images/info_5.png" alt="/">
+                    <div class="fl count">
+                        <p>车辆总数(辆)</p>
+                        <p class="conuts">46625</p>
+                    </div>
                 </div>
-                <!--左下边框-->
-                <div class="t_line_box">
-                    <i class="l_b_line"></i>
-                    <i class="b_l_line"></i>
-                </div>
-                 <!--右下边框-->
-                 <div class="t_line_box">
-                    <i class="r_b_line"></i>
-                    <i class="b_r_line"></i>
-                </div>
-                <div class="main_title" id="title0">
-                    <img src="img/t_7.png" alt="更多资源：">
-                    使用单位地址所属城市检验报告数量分布
-                </div>
-                <div id="chart_map" style="width:100%;height:610px;"></div>
+
             </div>
         </div>
-        <div class="main_right fr">
-            <div class="right_1">
-                <!--左上边框-->
-                <div class="t_line_box">
-                    <i class="t_l_line"></i>
-                    <i class="l_t_line"></i>
+        <div class="info_3 fr">
+            <div class="text_2">
+                <div class="fl">
+                    <img src="images/info_6.png" alt="/">
+                    <div class="fl count">
+                        <p>车辆总数(辆)</p>
+                        <p class="conuts">46625</p>
+                    </div>
                 </div>
-                <!--右上边框-->
-                <div class="t_line_box">
-                    <i class="t_r_line"></i>
-                    <i class="r_t_line"></i>
+                <div class="fl">
+                    <img src="images/info_7.png" alt="/">
+                    <div class="fl count">
+                        <p>车辆总数(辆)</p>
+                        <p class="conuts">46625</p>
+                    </div>
                 </div>
-                <!--左下边框-->
-                <div class="t_line_box">
-                    <i class="l_b_line"></i>
-                    <i class="b_l_line"></i>
-                </div>
-                    <!--右下边框-->
-                    <div class="t_line_box">
-                    <i class="r_b_line"></i>
-                    <i class="b_r_line"></i>
-                </div>
-                <div class="main_title" id="title3">
-                    <img src="img/t_7.png" alt="更多资源：">
-                    总体检验结论统计
-                </div>
-                <div id="chart_3" class="echart t_btn7" style="width:100%;height: 280px;"></div>
-            </div>
-            <div class="right_2">
-                <!--左上边框-->
-                <div class="t_line_box">
-                    <i class="t_l_line"></i>
-                    <i class="l_t_line"></i>
-                </div>
-                <!--右上边框-->
-                <div class="t_line_box">
-                    <i class="t_r_line"></i>
-                    <i class="r_t_line"></i>
-                </div>
-                <!--左下边框-->
-                <div class="t_line_box">
-                    <i class="l_b_line"></i>
-                    <i class="b_l_line"></i>
-                </div>
-                    <!--右下边框-->
-                    <div class="t_line_box">
-                    <i class="r_b_line"></i>
-                    <i class="b_r_line"></i>
-                </div>
-                <div class="main_title" id="title4">
-                    <img src="img/t_7.png" alt="更多资源：">
-                    各容器种类的检验结论统计
-                </div>
-                <div id="chart_4" class="echart fl t_btn4" style="width:100%;height: 280px;cursor: pointer;"></div>
+
             </div>
         </div>
     </div>
-    <div class="data_bottom">
-        <div class="bottom_1 fl t_btn5" style="cursor: pointer;">
-            <!--左上边框-->
-            <div class="t_line_box">
-                <i class="t_l_line"></i>
-                <i class="l_t_line"></i>
-            </div>
-            <!--右上边框-->
-            <div class="t_line_box">
-                <i class="t_r_line"></i>
-                <i class="r_t_line"></i>
-            </div>
-            <!--左下边框-->
-            <div class="t_line_box">
-                <i class="l_b_line"></i>
-                <i class="b_l_line"></i>
-            </div>
-                <!--右下边框-->
-                <div class="t_line_box">
-                <i class="r_b_line"></i>
-                <i class="b_r_line"></i>
-            </div>
-            <div class="main_title" id="title5">
-                <img src="img/t_7.png" alt="更多资源：">
-                制造单位与检验结论情况分析
-            </div>
-            <div id="chart_5" class="echart fl" style="width:100%;height: 250px;margin-top: 15px;"></div>
-        </div>
-        <div class="bottom_center fl">
-            <div class="bottom_2 fl">
-                <!--左上边框-->
-                <div class="t_line_box">
-                    <i class="t_l_line"></i>
-                    <i class="l_t_line"></i>
+
+    <div class="data_content">
+        <!--左边-->
+        <div class="data_left fl">
+            <div class="left_top">
+                <!--/*左边第一部分*/-->
+                <div class="info public">
+                    <div class="min-title">
+                        <span>车辆总数</span>
+                    </div>
+                    <div id="char4" style="width:100%;height: 100%;"></div>
+                    <div class="boxfoot"></div>
                 </div>
-                <!--右上边框-->
-                <div class="t_line_box">
-                    <i class="t_r_line"></i>
-                    <i class="r_t_line"></i>
+                <!--左边第二部分-->
+                <div class="top_bottom public">
+                    <div class="min-title">
+                        <span>车辆类型</span>
+                    </div>
+                    <div id="echarts_1" style="width:100%;height: 100%;"></div>
+                    <div class="boxfoot"></div>
                 </div>
-                <!--左下边框-->
-                <div class="t_line_box">
-                    <i class="l_b_line"></i>
-                    <i class="b_l_line"></i>
+                <!--左边第三部分-->
+                <div class="left_bottom public">
+                    <div class="min-title">
+                        <span>车辆状态</span>
+                    </div>
+                    <div id="chart_2" style="width:100%;height: 100%;"></div>
+                    <div class="boxfoot"></div>
                 </div>
-                    <!--右下边框-->
-                    <div class="t_line_box">
-                    <i class="r_b_line"></i>
-                    <i class="b_r_line"></i>
-                </div>
-                <div class="main_title" id="title6">
-                    <img src="img/t_7.png" alt="更多资源：">
-                    制造日期、检验日期趋势分析
-                </div>
-                <div id="chart_6" class="echart fl t_btn8" style="width:100%;height: 280px;cursor: pointer;"></div>
-            </div>
-            <div class="bottom_3 fl">
-                <!--左上边框-->
-                <div class="t_line_box">
-                    <i class="t_l_line"></i>
-                    <i class="l_t_line"></i>
-                </div>
-                <!--右上边框-->
-                <div class="t_line_box">
-                    <i class="t_r_line"></i>
-                    <i class="r_t_line"></i>
-                </div>
-                <!--左下边框-->
-                <div class="t_line_box">
-                    <i class="l_b_line"></i>
-                    <i class="b_l_line"></i>
-                </div>
-                    <!--右下边框-->
-                    <div class="t_line_box">
-                    <i class="r_b_line"></i>
-                    <i class="b_r_line"></i>
-                </div>
-                <div class="main_title" id="title7">
-                    <img src="img/t_7.png" alt="更多资源：">
-                    检验类别的检验结论热力分布
-                </div>
-                <div id="chart_7" class="echart fl t_btn2" style="width:100%;height: 280px;cursor: pointer;"></div>
             </div>
         </div>
-        <div class="bottom_4 fr">
-            <!--左上边框-->
-            <div class="t_line_box">
-                <i class="t_l_line"></i>
-                <i class="l_t_line"></i>
+        <!--中间-->
+        <div class="data_c fl">
+            <div class="data_c_1">
+
+
+                <div id="contPar" class="contPar">
+                    <div id="page1" style="z-index:1">
+                        <div class="title0">车辆综合管控平台</div>
+                        <div class="title1">旅游、交通、危险品、校车、大数据</div>
+
+
+                        <div id="drag-container" style="z-index: 1">
+                            <div id="spin-container">
+
+                                <img alt="/" class="infoBtn" src="picture/page1_0.png">
+                                <img alt="/" class="" src="picture/page1_1.png">
+                                <img alt="/" class="" src="picture/page1_2.png">
+                                <img alt="/" class="" src="picture/page1_1.png">
+                                <img alt="/" class="" src="picture/page1_2.png">
+
+                            </div>
+                            <div id="ground"></div>
+                        </div>
+
+                        <img alt="/" class="img3 png" src="images/yuan.png">
+                    </div>
+                </div>
+
+
             </div>
-            <!--右上边框-->
-            <div class="t_line_box">
-                <i class="t_r_line"></i>
-                <i class="r_t_line"></i>
+            <div class="data_c_2 public">
+
+                <div id="echart4" style="width: 100%;height: 100%;padding-top: 10px;"></div>
+                <div class="boxfoot"></div>
             </div>
-            <!--左下边框-->
-            <div class="t_line_box">
-                <i class="l_b_line"></i>
-                <i class="b_l_line"></i>
-            </div>
-                <!--右下边框-->
-                <div class="t_line_box">
-                <i class="r_b_line"></i>
-                <i class="b_r_line"></i>
-            </div>
-            <div class="main_title" id="title8">
-                <img src="img/t_7.png" alt="更多资源：">
-                设备新增、报废统计
-            </div>
-            <div id="chart_8" class="echart fl t_btn3" style="width:100%;height: 280px;cursor: pointer;"></div>
         </div>
+        <!--右边-->
+        <div class="data_right fr">
+            <div class="right_top">
+                <!--/*右边第一部分*/-->
+                <div class="right_info public">
+                    <div class="min-title">
+                        <span>收费站收费数量</span>
+                    </div>
+                    <div class="echart wenzi">
+                    </div>
+                    <div class="boxfoot"></div>
+                </div>
+                <!--右边第二部分-->
+                <div class="right_content public">
+                    <div class="min-title">
+                        <span>抓拍车辆</span>
+                    </div>
+                    <div id="chart_3" style="width:100%;height: 100%;"></div>
+                    <div class="boxfoot"></div>
+                </div>
+                <!--右边第三部分-->
+                <div class="right_bottom public">
+                    <div class="min-title">
+                        <span>车辆类型</span>
+                    </div>
+                    <div id="echarts_2" style="width:100%;height: 100%;padding-top: 10px;"></div>
+                    <div class="boxfoot"></div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
-</div>
-<div style="text-align:center;">
-<!--<p>安徽特检</p>-->
-</div>
-</body>
-<script src="js/jquery-2.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/common.js"></script>
+</section>
+
+<script src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
 <script src="js/echarts.min.js"></script>
-<script src="js/dataTool.js"></script>
-<script src="js/index.js"></script>
-<script src="js/china.js"></script>
-<script src="js/hunan.js"></script>
+<script src="js/echart.js"></script>
+<!--<script type="text/javascript" src="js/com.js"></script>-->
+<script src="https://v.bootstrapmb.com/2026/1/aqrm516575/js/index.js"></script>
+<script src="js/fontscroll.js"></script>
+
+
+</body>
 </html>
